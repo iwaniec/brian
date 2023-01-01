@@ -1,0 +1,268 @@
+<Main>:
+    orientation: 'vertical'
+    padding: '0dp'
+    spacing: '5dp'
+
+    Label:
+        size_hint_y: None
+        height: '30dp'
+        text:'Money'
+        font_size: '24dp'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: '10dp'
+        Policies: # Policies
+        Outcomes: # Outcomes
+        Popularity: # Popularity
+
+# ------------------------------------------------------
+# POLICIES
+# ------------------------------------------------------
+<Policies>:
+    orientation: 'vertical'
+    padding: '5dp'
+
+    Label:
+        size_hint_y: None
+        height: '40dp'
+        text:'Policies'
+    Accordion:
+        orientation: 'vertical'
+
+        AccordionItem:
+            title:
+                'taxes'
+            BoxLayout:
+                orientation:'vertical'
+                
+                Label:
+                    id: gas_tax_label_id
+                    text:'Gas Tax at 0%'
+                Slider:
+                    id: gas_tax_slider_id
+                    orientation: 'horizontal'
+                    value_track: True
+                    value_track_color: (0, 1, 1)
+                    min:0
+                    max:50
+                    value:0
+                    step: 0.5
+                    on_touch_move: if self.collide_point(*args[1].pos): root.gas_tax(self.value)
+                    on_touch_up: root.gas_tax(self.value)
+                Label:
+                    text:'Food'
+                Slider:
+                    id: food_tax_slider_id
+                    min:0
+                    max:50
+                    value:0
+                    orientation: 'horizontal'
+                Label:
+                    text:'Income'
+                Slider:
+                    id: income_tax_slider_id
+                    min:0
+                    max:50
+                    value:30
+                    orientation: 'horizontal'
+                Label:
+                    text:'alchohol'
+                Slider:
+                    id: alchohol_tax_slider_id
+                    min:0
+                    max:50
+                    value:0
+                    orientation: 'horizontal'
+        AccordionItem:
+            title:
+                'Restrictions'
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    text:'Minimium wage'
+                Slider:
+                    id: minimium_wage_slider_id
+                    min:0
+                    max:100
+                    value:12
+                    orientation: 'horizontal'
+                Label:
+                    text:'Drinking age'
+                Slider:
+                    id: drinking_age_slider_id
+                    min:0
+                    max:22
+                    value:21
+                    orientation: 'horizontal'
+                Label:
+                    text:'Open borders'
+                Slider:
+                    id: open_borders_slider_id
+                    min:0
+                    max:5
+                    value:2
+                    step: 1
+                    orientation: 'horizontal'
+                Label:
+                    text:'Mandatory Church Service'
+                Slider:
+                    id: church_service_slider_id
+                    min:0
+                    max:3
+                    value:0
+                    orientation: 'horizontal'
+                Label:
+                    text:'Drug Ban'
+                Slider:
+                    id: drug_ban_slider_id
+                    min:0
+                    max:5
+                    value:1
+                    orientation: 'horizontal'
+                Label:
+                    text:'Nuclear Ban'
+                Slider:
+                    id: nuclear_ban_slider_id
+                    min:0
+                    max:1
+                    value:0
+                    orientation: 'horizontal'
+        AccordionItem:
+            title:
+                'Subsidies'
+
+
+# ------------------------------------------------------
+# OUTCOMES
+# ------------------------------------------------------
+<Outcomes>:
+    orientation: 'vertical'
+    padding: '5dp'
+
+    Label:
+        size_hint_y: None
+        height: '40dp'
+        text:'Outcomes'
+    Accordion:
+        orientation: 'vertical'
+
+        AccordionItem:
+            title:
+                'Health'
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    text:'Alcohol Abuse'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 15
+                Label:
+                    text:'Food Supply'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 95
+                Label:
+                    text:'Drug Abuse'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 15
+                Label:
+                    text:'The Environment'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 80
+        AccordionItem:
+            title:
+                'Wealth'
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    text:'Housing'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 92
+                Label:
+                    text:'Food Price'
+                ProgressBar:
+                    min: 0
+                    max: 300
+                    value: 100
+                Label:
+                    text:'GDP'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 98
+                Label:
+                    text:'Tax Evasion'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 15
+                Label:
+                    text:'Resources'
+                ProgressBar:
+                    min: 0
+                    max: 100
+                    value: 86
+        AccordionItem:
+            title:
+                'Technology and Education'
+            BoxLayout:
+                orientation:'vertical'
+                ProgressBar:
+                    value: 50
+                ProgressBar:
+                    value: 50
+                ProgressBar:
+                    value: 50
+        AccordionItem:
+            title:
+                'Society'
+            BoxLayout:
+                orientation:'vertical'
+                ProgressBar:
+                    value: 50
+                ProgressBar:
+                    value: 50
+                ProgressBar:
+                    value: 50
+
+# ------------------------------------------------------
+# POPULARITY
+# ------------------------------------------------------
+<Popularity>:
+    orientation: 'vertical'
+    padding: '5dp'
+
+    Label:
+        size_hint_y: None
+        height: '40dp'
+        text:'Popularity'
+    Label:
+        text:'Conservatives'
+    ProgressBar:
+        value: 50
+    Label:
+        text:'Liberals'
+    ProgressBar:
+        value: 50
+    Label:
+        text:'Capitalists'
+    ProgressBar:
+        value: 50
+    Label:
+        text:'Socialists'
+    ProgressBar:
+        value: 50
+
+
+# ------------------------------------------------------
+# WIDGETS
+# ------------------------------------------------------
